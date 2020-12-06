@@ -16,4 +16,7 @@ $(function() {
 
     // trigger animations
     $("h1").addClass("animate");
+
+
+
 });
