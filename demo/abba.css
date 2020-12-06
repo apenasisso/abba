@@ -186,7 +186,7 @@ section > header {
 
 .sub-section {
     border-top: 1px solid #fff;
-    border-bottom: 1px solid #bbb;
+    /*border-bottom: 1px solid #bbb;*/
 }
 
 .section-one {
@@ -343,6 +343,11 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+.experiment-name {
+    margin-left: 30px;
+    margin-top: 20px;
 }
 /*
  * red: B42647

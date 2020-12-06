@@ -19,7 +19,9 @@
             $(function() {
                 const results = document.getElementById('results')
                 const el = document.getElementById('download')
-                html2canvas(results).then(function(canvas) {
+                html2canvas(results, {
+                    scale: 1
+                }).then(function(canvas) {
                     var image = canvas.toDataURL("image/png");
                     el.href = image;
                 });
@@ -75,11 +77,11 @@
                     </p>
                 </form>
             </div>
-            <div class="sub-section">
-                <div id="results" class="results"></div>
-                <a id="download" download="results.png" href="" >Download</a>
+            <div id="results" class="sub-section" style="width: 800px">
+                <h4 class="experiment-name" id="experiment-name">test</h4>
+                <div class="results"></div>
             </div>
-
+            <a id="download" download="results.png" href="" >Download</a>
         </section>
     </body>
 </html>

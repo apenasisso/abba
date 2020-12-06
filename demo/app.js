@@ -1,7 +1,9 @@
 // Copyright (c) 2012 Thumbtack, Inc.
 
 var Abba = (function(Abba, $, Hash) {
-
+var experiment = {
+    name: '',
+}
 Abba.TextInputView = function($element) {
     this._$element = $element;
 }
@@ -248,6 +250,9 @@ Abba.Presenter.prototype = {
             case 'useMultipleTestCorrection':
                 this._inputsView.useMultipleTestCorrectionInput.setValue(valueString === 'true');
                 break;
+            case 'experimentName':
+                experiment.name = valueString;
+                break;
         }
     },
 
@@ -296,6 +301,8 @@ Abba.Presenter.prototype = {
             test.addVariation(variation.label, variation.numSuccesses, variation.numSamples);
         });
         test.renderTo(this._$resultsContainer);
+        const name = document.getElementById('experiment-name')
+        name.innerText = experiment.name;
     },
 
     _handleHistoryChange: function(hash) {
