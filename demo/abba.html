@@ -24,6 +24,7 @@
                 }).then(function(canvas) {
                     var image = canvas.toDataURL("image/png");
                     el.href = image;
+                    el.download = window.experiment.name + ".png"
                 });
             })
 
@@ -78,7 +79,20 @@
                 </form>
             </div>
             <div id="results" class="sub-section" style="width: 800px">
-                <h4 class="experiment-name" id="experiment-name">test</h4>
+                <div class="experiment-specs">
+<!--                    <span class="label-name" >Experiment name:</span>-->
+<!--                    <span class="label-value" id="experiment-name">a</span>-->
+
+                    <span class="label-name" >Experiment metric:</span>
+                    <span class="label-value" id="experiment-metric">a</span>
+
+                    <span class="label-name" >Start date:</span>
+                    <span class="label-value" id="experiment-start-date">a</span>
+
+                    <span class="label-name" >End date:</span>
+                    <span class="label-value" id="experiment-end-date">a</span>
+                </div>
+<!--                <div class="experiment-name" id="experiment-name">test</div>-->
                 <div class="results"></div>
             </div>
             <a id="download" download="results.png" href="" >Download</a>

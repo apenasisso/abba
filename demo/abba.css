@@ -298,7 +298,7 @@ button:hover {
 }
 
 .inputs, .results {
-    padding: 2em;
+    padding: 1em;
     max-width: 800px;
 }
 
@@ -345,9 +345,16 @@ button:hover {
     display: none;
 }
 
-.experiment-name {
-    margin-left: 30px;
-    margin-top: 20px;
+.experiment-specs {
+    padding: 1em;
+}
+
+.label-value {
+    margin-right: 20px;
+}
+
+.label-name {
+    font-weight: bold;
 }
 /*
  * red: B42647

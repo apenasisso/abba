@@ -1,8 +1,11 @@
 // Copyright (c) 2012 Thumbtack, Inc.
 
 var Abba = (function(Abba, $, Hash) {
-var experiment = {
-    name: '',
+window.experiment = {
+    name: 'name',
+    metric: 'metric',
+    start_date: 'start_date',
+    end_date: 'end_date',
 }
 Abba.TextInputView = function($element) {
     this._$element = $element;
@@ -251,7 +254,16 @@ Abba.Presenter.prototype = {
                 this._inputsView.useMultipleTestCorrectionInput.setValue(valueString === 'true');
                 break;
             case 'experimentName':
-                experiment.name = valueString;
+                window.experiment.name = valueString;
+                break;
+            case 'experimentMetric':
+                window.experiment.metric = valueString;
+                break;
+            case 'experimentStartDate':
+                window.experiment.start_date = valueString;
+                break;
+            case 'experimentEndDate':
+                window.experiment.end_date = valueString;
                 break;
         }
     },
@@ -301,8 +313,18 @@ Abba.Presenter.prototype = {
             test.addVariation(variation.label, variation.numSuccesses, variation.numSamples);
         });
         test.renderTo(this._$resultsContainer);
-        const name = document.getElementById('experiment-name')
-        name.innerText = experiment.name;
+
+        // const experimentName = document.getElementById('experiment-name')
+        // experimentName.innerText = experiment.name;
+
+        const experimentMetric = document.getElementById('experiment-metric')
+        experimentMetric.innerText = experiment.metric;
+
+        const experimentStartDate = document.getElementById('experiment-start-date')
+        experimentStartDate.innerText = experiment.start_date;
+
+        const experimentEndDate = document.getElementById('experiment-end-date')
+        experimentEndDate.innerText = experiment.end_date;
     },
 
     _handleHistoryChange: function(hash) {
