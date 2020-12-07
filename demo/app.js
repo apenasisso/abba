@@ -320,8 +320,8 @@ Abba.Presenter.prototype = {
         const experimentMetric = document.getElementById('experiment-metric')
         experimentMetric.innerText = experiment.metric;
 
-        const experimentStartDate = document.getElementById('experiment-start-date')
-        experimentStartDate.innerText = experiment.start_date;
+        // const experimentStartDate = document.getElementById('experiment-start-date')
+        // experimentStartDate.innerText = experiment.start_date;
 
         const experimentEndDate = document.getElementById('experiment-end-date')
         experimentEndDate.innerText = experiment.end_date;
